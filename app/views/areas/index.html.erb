@@ -1,4 +1,4 @@
-<h1>Listing areas</h1>
+<h1>Areas</h1>
 
 <table class="table table-condensed">
   <thead>
@@ -12,9 +12,9 @@
     <% @areas.each do |area| %>
       <tr>
         <td><%= area.name %></td>
-        <td><%= link_to 'Show', area %></td>
-        <td><%= link_to 'Edit', edit_area_path(area) %></td>
-        <td><%= link_to 'Destroy', area, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', area %></td>
+        <td><%= link_to 'Editar', edit_area_path(area) %></td>
+        <td><%= link_to 'Deletar', area, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

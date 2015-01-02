@@ -12,9 +12,9 @@
     <% @atendentes.each do |atendente| %>
       <tr>
         <td><%= atendente.name %></td>
-        <td><%= link_to 'Show', atendente %></td>
-        <td><%= link_to 'Edit', edit_atendente_path(atendente) %></td>
-        <td><%= link_to 'Destroy', atendente, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', atendente %></td>
+        <td><%= link_to 'Editar', edit_atendente_path(atendente) %></td>
+        <td><%= link_to 'Deletar', atendente, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
