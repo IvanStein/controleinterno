@@ -1,0 +1,47 @@
+<%= form_for(@atendimento) do |f| %>
+  <% if @atendimento.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@atendimento.errors.count, "error") %> prohibited this atendimento from being saved:</h2>
+
+      <ul>
+      <% @atendimento.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :data %><br>
+    <%= f.date_select :data %>
+
+  <div class="field">
+    <%= f.label :cliente_id %><br>
+    <%= f.collection_select( :cliente_id, Cliente.all, :id, :name, prompt: true)%>
+  </div>
+
+  <div class="field">
+    <%= f.label :usuario_id %><br>
+    <%= f.collection_select( :usuario_id , Usuario.all, :id, :name, prompt: true)%>
+
+  <div class="field">
+    <%= f.label :atendente_id %><br>
+    <%= f.collection_select( :atendente_id , Atendente.all, :id, :name, prompt: true)%>
+  </div>
+
+  <div class="field">
+    <%= f.label :area_id %><br>
+    <%= f.collection_select( :area_id , Area.all, :id, :name, prompt: true)%>
+  </div>
+
+  <div class="field">
+    <%= f.label :assunto %><br>
+    <%= f.text_field :assunto %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+
+<% end %>

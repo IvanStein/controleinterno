@@ -1,5 +1,15 @@
 Rails.application.routes.draw do
-  root to: 'visitors#index'
+  resources :atendimentos
+
+  resources :areas
+
+  resources :atendentes
+
+  resources :usuarios
+
+  resources :clientes
+
+  root to: 'users#index'
   devise_for :users
   resources :users
 end

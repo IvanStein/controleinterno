@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Data:</strong>
+  <%= @atendimento.data %>
+</p>
+
+<p>
+  <strong>Cliente:</strong>
+  <%= @atendimento.cliente.name %>
+</p>
+
+<p>
+  <strong>Usuario:</strong>
+  <%= @atendimento.usuario.name  %>
+</p>
+
+<p>
+  <strong>Atendente:</strong>
+  <%= @atendimento.atendente.name %>
+</p>
+
+<p>
+  <strong>Area:</strong>
+  <%= @atendimento.area.name%>
+</p>
+<p>
+  <strong>Assunto:</strong>
+  <%= @atendimento.assunto %>
+</p>
+<%= link_to 'Editar', edit_atendimento_path(@atendimento) %> |
+<%= link_to 'Voltar', atendimentos_path %> |
+<%= link_to 'Cadastrar Novo Atendimento', new_atendimento_path %>

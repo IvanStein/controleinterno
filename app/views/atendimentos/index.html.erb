@@ -1,0 +1,35 @@
+
+
+<h1>Atendimentos</h1>
+<table class="table table-condensed">
+  <thead>
+    <tr>
+      <th>Data</th>
+      <th>Cliente</th>
+      <th>Usuario</th>
+      <th>Atendente</th>
+      <th>Area</th>
+      <th>Assunto</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @atendimentos.each do |atendimento| %>
+     <tr>
+        <td><%= atendimento.data %></td>
+        <td><%= atendimento.cliente.name%></td>
+        <td><%= atendimento.usuario.name%></td>
+        <td><%= atendimento.atendente.name%></td>
+        <td><%= atendimento.area.name%></td>
+        <td><%= atendimento.assunto%></td>
+        <td><%= link_to 'Show', atendimento %></td>
+        <td><%= link_to 'Edit', edit_atendimento_path(atendimento) %></td>
+      </tr>
+     <% end %>
+  </tbody>
+</table>
+<br>
+<%= Atendimento.count %> registrados</p>
+<%= link_to 'Cadastrar Novo Atendimento', new_atendimento_path %>
+
