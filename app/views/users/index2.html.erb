@@ -10,11 +10,13 @@
   </head>
   <body>
     <header>
-      <%= render 'layouts/navigation' %>
+      <h4> Atualmente registrados</p><h4>
+      <h5> Atendimentos: <%= Atendimento.count %> registrados.</p><h5>
+      <h5> Clientes: <%= Cliente.count %> registrados.</p><h5>
+      <h5> Usuarios de Prefeituras: <%= Usuario.count %> registrados.</p><h5>
+      <h5> Atendentes: <%= Atendente.count %> registrados.</p><h5>
+      <h5> Areas: <%= Area.count %> registrados.</p><h5>
     </header>
-      <main role="main">
-       <%= render 'layouts/messages' %>
-       <%= yield %>
-      </main>
+      
   </body>
 </html>
