@@ -1,4 +1,4 @@
-class ClientesController < ApplicationControlle
+class ClientesController < ApplicationController
   before_action :set_cliente, only: [:show, :edit, :update, :destroy ]
 
   respond_to :html
