@@ -1,22 +1,25 @@
 
 
 <h1>Atendimentos</h1>
-<table class="table table-condensed">
+
+<table class="table table-condensed table-striped">
   <thead>
     <tr>
+      <th>#</th>
       <th>Data</th>
       <th>Cliente</th>
-      <th>Usuario</th>
+      <th>Usuario</th>  
       <th>Atendente</th>
       <th>Area</th>
       <th>Assunto</th>
-      <th colspan="3"></th>
+      <th colspan="1"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @atendimentos.each do |atendimento| %>
      <tr>
+        <td><%= atendimento.id %></td>
         <td><%= atendimento.data %></td>
         <td><%= atendimento.cliente.name%></td>
         <td><%= atendimento.usuario.name%></td>
