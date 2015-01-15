@@ -4,9 +4,14 @@ class AtendimentosController < ApplicationController
   respond_to :html
 
   def index
-    @atendimentos = Atendimento.all
-    respond_with(@atendimentos)
-  end
+   @atendimentos = Atendimento.all
+      respond_to do |format|
+      format.html
+      format.csv { send_data @atendimento.to_csv }
+      format.xls 
+    end
+   
+ end
 
   def show
     respond_with(@atendimento)

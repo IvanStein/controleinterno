@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:x="urn:schemas-microsoft-com:office:excel"
+  xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:html="http://www.w3.org/TR/REC-html40">
+  <Worksheet ss:Name="Sheet1">
+    <Table>
+      <Row>
+        <Cell><Data ss:Type="String">ID</Data></Cell>
+        <Cell><Data ss:Type="String">Data</Data></Cell>
+        <Cell><Data ss:Type="String">Cliente</Data></Cell>
+        <Cell><Data ss:Type="String">Usuario</Data></Cell>
+        <Cell><Data ss:Type="String">Atendente</Data></Cell>
+        <Cell><Data ss:Type="String">Area</Data></Cell>
+        <Cell><Data ss:Type="String">Assunto</Data></Cell>
+      </Row>
+    <% @atendimentos.each do |atendimento| %>
+      <Row>
+        <Cell><Data ss:Type="Number"><%= atendimento.id %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= atendimento.data%></Data></Cell>
+        <Cell><Data ss:Type="String"><%= atendimento.cliente.name%></Data></Cell>
+        <Cell><Data ss:Type="String"><%= atendimento.usuario.name %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= atendimento.atendente.name%></Data></Cell>
+        <Cell><Data ss:Type="String"><%= atendimento.area.name%></Data></Cell>
+        <Cell><Data ss:Type="String"><%= atendimento.assunto%></Data></Cell>
+      </Row>
+    <% end %>
+    </Table>
+  </Worksheet>
+</Workbook>

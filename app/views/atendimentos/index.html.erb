@@ -33,6 +33,8 @@
   </tbody>
 </table>
 <br>
-<%= Atendimento.count %> registrados</p>
+<p>
+  Download:<%= link_to "Excel", atendimentos_path(format: "xls") %>
+| <%= Atendimento.count %> registrados </p>
 <%= link_to 'Cadastrar Novo Atendimento', new_atendimento_path %>
 
