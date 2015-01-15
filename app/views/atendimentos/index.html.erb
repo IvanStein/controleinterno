@@ -32,9 +32,21 @@
      <% end %>
   </tbody>
 </table>
+
+<h2>Import Products</h2>
+<%= form_tag import_atendimentos_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Import" %>
+<% end %>
 <br>
 <p>
-  Download:<%= link_to "Excel", atendimentos_path(format: "xls") %>
+  Download:
+  <%= link_to "Excel", atendimentos_path(format: "xls") %>
+   <%= link_to "CSV", atendimentos_path(format: "csv") %>
 | <%= Atendimento.count %> registrados </p>
 <%= link_to 'Cadastrar Novo Atendimento', new_atendimento_path %>
+
+
+
+
 

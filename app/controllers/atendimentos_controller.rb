@@ -7,11 +7,15 @@ class AtendimentosController < ApplicationController
    @atendimentos = Atendimento.all
       respond_to do |format|
       format.html
-      format.csv { send_data @atendimento.to_csv }
+      format.csv { send_data @atendimentos.to_csv }
       format.xls 
     end
-   
  end
+  
+  def import
+    Atendimento.import(params[:file])
+    redirect_to root_url, notice: "Atendimentos importados."
+  end
 
   def show
     respond_with(@atendimento)
@@ -49,4 +53,9 @@ class AtendimentosController < ApplicationController
     def atendimento_params
       params.require(:atendimento).permit(:data, :assunto, :cliente_id, :usuario_id, :atendente_id, :area_id)
     end
+
+
+
+
+
 end

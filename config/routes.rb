@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  resources :atendimentos
-
+  resources :atendimentos do
+    collection { post :import }
+    end
   resources :areas
 
   resources :atendentes
@@ -12,4 +13,6 @@ Rails.application.routes.draw do
   root to: 'users#index2'
   devise_for :users
   resources :users
+  
 end
+
