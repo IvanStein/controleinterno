@@ -14,6 +14,8 @@ gem 'devise'
 gem 'pg'
 gem 'therubyracer', :platform=>:ruby
 gem 'prawn'
+gem 'activeadmin', github: 'activeadmin'
+gem 'inherited_resources', github: 'josevalim/inherited_resources', branch: 'rails-4-2'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]
