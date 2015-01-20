@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   resources :clientes
 
-  root to: 'users#index2'
+  root to: 'admin/dashboard#index'
   devise_for :users
   resources :users
   
